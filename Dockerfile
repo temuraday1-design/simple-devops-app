@@ -1,17 +1,13 @@
-# 1. Базалық образ
+# Python негізіндегі сурет
 FROM python:3.13-slim
 
-# 2. Жұмыс директориясы
 WORKDIR /app
 
-# 3. Қолданба файлдарын контейнерге көшіру
-COPY . /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. Тәуелділіктерді орнату
-RUN pip install --no-cache-dir flask
+COPY . .
 
-# 5. Портты ашу
 EXPOSE 5000
 
-# 6. Қолданбаны іске қосу
 CMD ["python", "app.py"]
