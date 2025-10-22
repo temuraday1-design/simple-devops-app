@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <title>Қарапайым калькулятор</title>
+</head>
+<body>
+    <h1>Қарапайым қосу калькуляторы</h1>
+    <form method="POST">
+        <input type="text" name="num1" placeholder="Бірінші сан">
+        <input type="text" name="num2" placeholder="Екінші сан">
+        <button type="submit">Қосу</button>
+    </form>
+
+    {% if result is not none %}
+        <h3>Нәтиже: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
